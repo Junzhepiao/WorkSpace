@@ -1,37 +1,43 @@
-# workspace
+* Fork this repo and update this README file with your proposal.
+* Make sure to preview your proposal in a markdown preview and [use valid markdown syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
+  * Unformatted/unreadable proposals will be rejected
 
-> A Vue.js project
+## Project Description
+> Employee Portal. 
+* An attendance status. let your teammate know your current state. Use sick time, vacation hours, went business trips, attend an events or lunch hours. And also able to see how many sick hours and vacation hours I have. 
+* Event calendar. Able to create, and post an event on the calendar.
+* My todo lists. Able to create, edit and delete my todo lists.
 
-## Build Setup
+## What problem does your project solve?
+* Bring a  Convenience and Practicality online environment for the employee. Improve working efficiency and Satisfaction.
 
-``` bash
-# install dependencies
-npm install
+## Who has this problem?
+* Usually in a big team or department has lots of employees. Team director, leader, and teammates cannot know the availabilities of each other during the work.
 
-# serve with hot reload at localhost:8080
-npm run dev
+## How will your project solve this problem?
+* Show each worker's status and availabilities to the entire group, team or department. Build a better connection with each other in the workplace.
+* A personal TODO lists that helps employee record their tasks.
+* An event calendar that allows employees to create and post events.
 
-# build for production with minification
-npm run build
+# Inputs and Outputs
+* Input: create user/ update status / absence requires / TODO list / event posts
+* Output: efficient communication within group, team, and department
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+# Technologies
+* Vue.js , Vuex
+* JavaScript
+* Node.js
+* HTML&CSS
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
- check box
-<v-list subheader two-line>
-            <v-list-tile v-for="(item, index) in todos" :key="index" >
-              <v-list-tile-action>
-                <v-checkbox v-model="complete"></v-checkbox>
-              </v-list-tile-action>
-              <v-list-tile-content @click="complete = !complete">
-                <v-list-tile-title>{{item.content}}</v-list-tile-title>
-              </v-list-tile-content>
-                <v-list-tile-action>
-                <v-icon large color="red lighten-1" v-on:click="handleDelete(item.id)">cancel</v-icon>
-                </v-list-tile-action>
-            </v-list-tile>
-          </v-list>
-
+# Prioritized Feature list
+* Users login/logout
+* Sort worker by title, search by name
+* Update my status
+* Show how many sick time and vacation hours left
+* Send sickness absence excuse notice, the vocation notice to the director or manager.
+* Director or manager can approve the absence requests. 
+* Status will only change after request approved, otherwise, the status will remain in "a request under review".
+* Personal TODO list. create, post, edit, delete.
+* create and post a meeting or event, co-workers able to attend.
+* events calendar
+* 1on 1 Chat - (STRETCH)
