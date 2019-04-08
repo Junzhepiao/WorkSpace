@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import {mapState,mapGetters} from 'vuex'
+import {mapState, mapGetters} from 'vuex'
 import 'bootstrap/dist/css/bootstrap.css'
 
 export default {

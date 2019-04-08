@@ -1,10 +1,9 @@
  <template>
-   <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"  height="200%">
-
-    <v-content>
-      <v-container fluid fill-height>
+ <v-container ma-5 fluid fill-height>
+    <v-content >
+      <v-container fluid fill-height >
         <v-layout align-center justify-center>
-          <v-flex xs12 sm8 md4>
+          <v-flex xs12 md4>
             <v-card class="rounded-card">
               <v-toolbar dark color="blue-grey darken-2">
                 <v-toolbar-title>Register</v-toolbar-title>
@@ -22,6 +21,8 @@
                   <span>Source</span>
                 </v-tooltip>
               </v-toolbar>
+
+              <v-container>
                 <v-form @submit.prevent="handleSubmit">
                     <v-card-text>
                   <v-text-field solo prepend-icon="email" name="email" label="Email"  type="email" v-model="email"></v-text-field>
@@ -29,22 +30,22 @@
                   <v-text-field solo prepend-icon="person" name="first_name" label="First Name" type="text" v-model="first_name"></v-text-field>
                   <v-text-field solo prepend-icon="person" name="last_name" label="Last Name" type="text" v-model="last_name"></v-text-field>
                   <v-text-field solo prepend-icon="phone" name="phone" label="Cell Phone"  type="integer" v-model="phone"></v-text-field>
-                  <v-select solo prepend-icon="title" :items="roles" name="role" label="Job Title" v-model="role"></v-select>
+                  <v-text-field solo prepend-icon="title" name="role" label="Role"  type="text" v-model="role"></v-text-field>
                   <v-text-field solo prepend-icon="photo" name="img_url" label="Profile Photo"  type="text" v-model="img_url"></v-text-field>
-              </v-card-text>
+                  </v-card-text>
               <v-card-actions>
                    <v-spacer></v-spacer>
                    <v-btn round type="submit" dark color="blue-grey darken-2" >Submit</v-btn>
                   <v-btn round dark color="blue-grey darken-2" :to="{name:'Login'}">Go Back</v-btn>
               </v-card-actions>
                 </v-form>
+              </v-container>
             </v-card>
           </v-flex>
         </v-layout>
       </v-container>
     </v-content>
-
-</v-parallax>
+ </v-container>
   </template>
 
 <script>
@@ -55,6 +56,7 @@ export default {
   name: 'Register',
   data () {
     return {
+      image:"https://cdn.vuetifyjs.com/images/parallax/material.jpg",
       roles:['Intern','Software Engineer','Senior Software Engineer','Principal Software Engineer'],
       drawer: null,
       email: null,
@@ -97,4 +99,5 @@ export default {
 .rounded-card{
     border-radius:25px;
 }
+
 </style>

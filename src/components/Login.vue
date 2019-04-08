@@ -1,13 +1,12 @@
  <template>
-  <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" >
-
+<v-container ma-5 fluid fill-height>
     <v-content>
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
           <v-flex xs12 sm8 md4>
             <v-card class="rounded-card">
               <v-toolbar dark color="blue-grey darken-2 ">
-                <v-toolbar-title> WorkSpace Login</v-toolbar-title>
+                <v-toolbar-title> WorkSpace</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-tooltip bottom>
                   <v-btn
@@ -29,7 +28,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                  <v-btn round dark color="blue-grey darken-2" :to="{name:'Register'}">Register</v-btn>
+                  <v-btn round dark color="blue-grey darken-2" :to="{name: 'Register'}">Register</v-btn>
                   <v-btn round type="submit" dark color="blue-grey darken-2" >Login</v-btn>
               </v-card-actions>
               </v-form>
@@ -39,7 +38,9 @@
       </v-container>
     </v-content>
 
-</v-parallax>
+
+
+</v-container>
   </template>
 
 <script>
@@ -53,7 +54,7 @@ export default {
     return {
       drawer: null,
       email:null,
-      password:null
+      password:null,
     }
   },
   methods: {

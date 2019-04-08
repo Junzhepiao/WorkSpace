@@ -1,6 +1,6 @@
 <template>
 <div id="Menu">
-          <v-toolbar color='elevation-0' >
+          <v-toolbar color=' grey lighten-2 elevation-0' >
           <v-spacer></v-spacer>
             <v-btn flat to="">Github</v-btn>
          <v-btn flat to="" >Linkedin</v-btn>
@@ -18,6 +18,7 @@
     class="blue-grey darken-2"
     permanent
   >
+  
     <v-img
       height="100%"
     >
@@ -52,7 +53,7 @@
           v-for="(link, i) in links"
           :key="i"
           :to="link.to"
-          active-class="cyan darken-3"
+          active-class="cyan darken-3 orange--text"
           avatar
           class="v-list-item"
         >
@@ -65,7 +66,9 @@
         </v-list-tile>
       </v-layout>
     </v-img>
+
   </v-navigation-drawer>
+
     <router-view/>
   </div>
 </template>

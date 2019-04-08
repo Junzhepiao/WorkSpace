@@ -122,6 +122,9 @@ export default {
   computed: mapState([
       'user' 
       ]),
+  mounted(){
+    this.$store.dispatch('getUser', this.$route.params.id)
+  },
   methods: {
        updateUserName(){
           this.$store.dispatch('profileUpdate',{

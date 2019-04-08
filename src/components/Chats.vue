@@ -11,25 +11,37 @@
                     <v-toolbar-title>Group Chat</v-toolbar-title>
                 </v-toolbar>
 
-                    <v-container id="scroll-target" style="max-height: 300px" class="scroll-y">
+                    <v-container id="scroll-target" style="max-height: 400px" class="scroll-y">
                         <v-layout
                             v-scroll:#scroll-target="onScroll"
                             column
                             align-center
                             justify-center
-                            style="height: 300px">
-                        
-
-                            <v-flex ma-2 v-for="(item, index) in chats" :key="index">
-                                <v-card class="rounded-card"  color='yellow accent-1' >
-                                    <v-card-text><strong v-for="(user, j) in allUsers" :key="j" v-if="user.id == item.user_id">{{user.first_name}}:</strong>
+                            >
+                            <v-flex ma-1 v-for="(item, index) in chats" :key="index">
+                                <v-flex class="rounded-card"  v-for="(user, j) in allUsers" :key="j" v-if="user.id == item.user_id">
+                                    <div class="row">
+                                        <div class="col-3">
+                                                        <v-list-tile avatar class="text-xs-right">
+                                                            <v-list-tile-avatar>
+                                                                <v-img
+                                                                    :src="user.img_url"
+                                                                    height="35"
+                                                                    contain/>
+                                                            </v-list-tile-avatar>
+                                                       </v-list-tile>
+                                        </div>
+                                        <div class="col-9">
+                                    <v-card class="rounded-card"  color='yellow accent-1'>
+                                    <v-card-text ><strong >{{user.first_name}}:</strong>
                                         {{item.content}}
                                     </v-card-text>
-                                </v-card>
-                                <span class="grey--text">{{ item.created_at | moment("calendar") }}</span>
-                            </v-flex>
-
-                    
+                                    </v-card>
+                                    <span class="grey--text">{{ item.created_at | moment("calendar") }}</span>
+                                    </div>
+                                    </div>
+                                </v-flex>
+                            </v-flex>                  
                             </v-layout>
                         </v-container>
                 </v-card>
@@ -44,7 +56,7 @@
             </v-flex>
             <v-flex shrink pa-1>
                 <v-card-actions>
-                    <v-btn type="submit" dark color="red lighten-1" >Send</v-btn>
+                    <v-btn type="submit" round dark color="red lighten-1" >Send</v-btn>
                 </v-card-actions>
             </v-flex>
         </v-layout>

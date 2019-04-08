@@ -10,7 +10,7 @@ export default new Vuex.Store({
     allUsers:[],
     todos:[],
     chats:[],
-    events:[]
+    allEvents:[],
   },
 
     mutations:{
@@ -36,12 +36,18 @@ export default new Vuex.Store({
         addAllChatsTodosToState(state, chats) {
             state.chats = chats
         },
-        newEventToState(state, events) {
-            state.events = events
+        newEventToState(state, allEvents) {
+            state.allEvents = allEvents
         },
         updatedUserToState(state, user) {
             state.user = user[0]
-        }
+        },
+        addUserToState(state, user) {
+            state.user = user[0]
+        },
+        addAllEventsToState(state, allEvents) {
+            state.allEvents = allEvents
+        },
     },
 
     getters:{
@@ -75,6 +81,15 @@ export default new Vuex.Store({
         axios.get('http://localhost:8000/users')
           .then(response => {
             commit('addAllUsersToState', response.data)
+          })
+          .catch(error => {
+            console.log(error)
+        })
+      },
+      getUser({ commit },id) {     
+        axios.get(`http://localhost:8000/user/${id}`, id)
+          .then(response => {
+            commit('addUserToState', response.data)
           })
           .catch(error => {
             console.log(error)
@@ -142,15 +157,14 @@ export default new Vuex.Store({
                      console.log(error)
                  })
             },
-        awayUserStatus({commit}, payload){    
-            console.log('update user payload',payload)
-            axios.patch(`http://localhost:8000/user/${payload.id}`, payload)
-                 .then((res)=> 
-                 commit('updatedUserToState', res.data)         
-                 )
-                 .catch(error => {
-                     console.log(error)
-                 })
+        getEvents({ commit }) {     //get all users for dashboard
+            axios.get('http://localhost:8000/events')
+                .then(response => {
+                    commit('addAllEventsToState', response.data)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
             },
 }
 }) 
